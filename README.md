@@ -7,25 +7,18 @@
 Install nvm  `https://github.com/coreybutler/nvm-windows`
 
 In command line:
-Install latest version of node and npm `nvm install`
+Install latest version of node and npm `nvm install latest`
+
+`nvm use 17.4.0`
 
 Install typescript globally `npm install -g typescript`
 
 
-
-### Setting up dependencies
-In command line navigate to project directory and install the dependencies
-
-`npm install fs`
-
-`npm install node-fetch`
-
-
 ### Running code
+Navigate to directory that the project is in.
+Compile code in command line: `tsc`
+Call player code in command line: `node runPlayerOutput.js 8471214 20152016`
 
-compile code in command line: `tsc`
-call player code in command line: `node runPlayerOutput.js 8471214 20152016`
-
-call team code in command line: `node runTeamOutput.js 5 20152016`
+Call team code in command line: `node runTeamOutput.js 5 20152016`
 
 CSV file will be created in local directory that the project is in
