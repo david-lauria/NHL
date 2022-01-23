@@ -1,5 +1,5 @@
-import fetch from 'node-fetch';
 import fs from 'fs';
+import { callAPI } from './callAPI.js';
 //get the player's team
 function getTeam(p_player) {
     return p_player.currentTeam.name;
@@ -20,21 +20,15 @@ function getNumber(p_player) {
 function checkRookie(p_player) {
     return p_player.rookie;
 }
-//get team information from the NHL API
-async function getPlayerAPI(p_player_id, p_season) {
-    var response = await fetch('https://statsapi.web.nhl.com/api/v1/people/' + p_player_id + '?season=' + p_season);
-    return response.json();
-}
-//get team information from the NHL API
-async function getPlayerStats(p_player_id, p_season) {
-    var response = await fetch('https://statsapi.web.nhl.com/api/v1/people/' + p_player_id + '/stats?stats=statsSingleSeason&season=' + p_season);
-    return response.json();
-}
 //store information in variables ready to be used for now
 var playerID = 8476792;
 var season = 20152016;
-//get team information from the API
-var playerInfoResponse = await getPlayerAPI(playerID, season);
+//build URL used in our API calls
+var build_player_url = 'https://statsapi.web.nhl.com/api/v1/people/' + playerID + '?season=' + season;
+var build_stat_url = 'https://statsapi.web.nhl.com/api/v1/people/' + playerID + '/stats?stats=statsSingleSeason&season=' + season;
+//make our API calls
+var playerInfoResponse = await callAPI(build_player_url);
+var playerStatResponse = await callAPI(build_stat_url);
 var player = playerInfoResponse.people[0];
 var playerName = player.fullName;
 var currentTeam = getTeam(player);
@@ -42,7 +36,6 @@ var playerAge = getAge(player);
 var playerPosition = getPosition(player);
 var playerNumber = getNumber(player);
 var playerRookie = checkRookie(player);
-var playerStatResponse = await getPlayerStats(playerID, season);
 var playerStats = playerStatResponse.stats[0].splits[0].stat;
 var assists = playerStats.assists;
 var goals = playerStats.goals;
