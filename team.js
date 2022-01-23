@@ -32,7 +32,7 @@ function getOpponent(game, p_team_id) {
 }
 try {
     //store information in variables ready to be used for now
-    var teamID = "5,10.";
+    var teamID = "5,10";
     var season = 20152016;
     var build_info_url = 'https://statsapi.web.nhl.com/api/v1/teams?teamId=' + teamID + '&expand=team.stats&season=' + season;
     var teamInfoResponse = null;

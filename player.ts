@@ -4,21 +4,36 @@ import { callAPI } from './callAPI.js';
 
 //get the player's team
 function getTeam(p_player:player){
+    try{
         return p_player.currentTeam.name;
+    }
+    catch(error){
+        return "";
+    }
 }
 
 //get the players Age
 function getAge(p_player:player){
+    if(p_player.currentAge === undefined){
+        return "";
+    }
         return p_player.currentAge;
 }
 
 //get the players position
 function getPosition(p_player:player){
+    
+    if(p_player.primaryPosition.name === undefined){
+    return "";
+}
         return p_player.primaryPosition.name;
 }
 
 //get the players number
 function getNumber(p_player:player){
+    if(p_player.primaryNumber === undefined){
+        return "";
+    }
     return p_player.primaryNumber;
 }
 
@@ -27,47 +42,98 @@ function checkRookie(p_player:player){
     return p_player.rookie;
 }
 
-//store information in variables ready to be used for now
-var playerID = 8476792;
+
+
+//header for CSV in our output variable
+var output = 'PLAYER_ID,PLAYER_NAME,CURRENT_TEAM,PLAYER_AGE,PLAYER_NUM,PLAYER_POS,ROOKIE_SW,ASSISTS_NUM,GOALS_NUM,GAMES_NUM,HITS_NUM,POINTS_NUM'
+
+
+try{ 
+var playerID = "8476792,8476793,8476794";
 var season = 20152016;
 
-//build URL used in our API calls
-var build_player_url = 'https://statsapi.web.nhl.com/api/v1/people/'+playerID+'?season='+season;
-var build_stat_url = 'https://statsapi.web.nhl.com/api/v1/people/'+playerID+'/stats?stats=statsSingleSeason&season='+season;
 
+//get list of ID if a list is provided
+var idList = playerID.split(',');
+var playerInfoResponse : any= null;
+var playerStatResponse : any= null;
+
+for(var i in idList){
+//build URL used in our API calls
+var build_player_url : string = 'https://statsapi.web.nhl.com/api/v1/people/'+idList[i]+'?season='+season;
+var build_stat_url : string = 'https://statsapi.web.nhl.com/api/v1/people/'+idList[i]+'/stats?stats=statsSingleSeason&season='+season;
+
+//setting up variables
+var playerStats : any = "";
+var assists : any = "";
+var goals : any = "";
+var games : any = "";
+var hits : any = "";
+var points : any = "";
 
 //make our API calls
-var playerInfoResponse : playerResponse = await callAPI(build_player_url) as playerResponse;
-var playerStatResponse : statResponse = await callAPI(build_stat_url) as statResponse;
+try{ 
+    playerInfoResponse = await callAPI(build_player_url) as playerResponse;
+}
+catch(error){
+throw "Player Info Call Error: " + error;
+}
+
+
+try{
+ playerStatResponse = await callAPI(build_stat_url) as statResponse;
+}
+catch(error){
+    throw "Player Stat Call Error: " + error;
+}
+
+
+//get player from our response
+var person : player = playerInfoResponse.people[0];
+var playerName = person.fullName;
 
 
 
-var player : player = playerInfoResponse.people[0];
-
-var playerName = player.fullName;
-var currentTeam = getTeam(player);
-var playerAge = getAge(player)
-var playerPosition = getPosition(player);
-var playerNumber = getNumber(player);
-var playerRookie = checkRookie(player);
-
-var playerStats = playerStatResponse.stats[0].splits[0].stat;
-
-var assists = playerStats.assists;
-var goals = playerStats.goals;
-var games = playerStats.games;
-var hits = playerStats.hits;
-var points = playerStats.points;
+var currentTeam = getTeam(person);
+var playerAge = getAge(person);
+var playerNumber = getNumber(person);
+var playerPosition = getPosition(person);
+var playerRookie = checkRookie(person);
 
 
 
-let header = 'PLAYER_ID,PLAYER_NAME,CURRENT_TEAM,PLAYER_AGE,PLAYER_NUM,PLAYER_POS,ROOKIE_SW,ASSISTS_NUM,GOALS_NUM,GAMES_NUM,HITS_NUM,POINTS_NUM'
-let text = playerID+','+playerName+','+currentTeam+','+playerAge+','+playerNumber+','+playerPosition+','+playerRookie+','+assists+','+goals+','+games+','+hits+','+points;
+//wrap these in a try catch because some players do not have stats recorded
+try{
+ playerStats = playerStatResponse.stats[0].splits[0].stat;
+ assists = playerStats.assists;
+ goals = playerStats.goals;
+ games = playerStats.games;
+ hits = playerStats.hits;
+ points = playerStats.points;
+}
+catch(error){
+    assists = "";
+    goals = "";
+    games = "";
+    hits = "";
+    points = "";
+}
 
-var output = header +'\n'+text;
+
+
+ //output "CSV"
+ let text = idList[i]+','+playerName+','+currentTeam+','+playerAge+','+playerNumber+','+playerPosition+','+playerRookie+','+assists+','+goals+','+games+','+hits+','+points;
+ output += '\n'+text;
+ 
+
+
+}
+
 
 var team_output = fs.writeFile('./player_output.csv',output,'utf8',function(error){
  if(error) throw error;
  });
-
-
+}
+catch(error){
+ console.log(error);
+}

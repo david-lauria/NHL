@@ -41,6 +41,51 @@ export interface player{
     primaryPosition: position
 }
 
+export interface player{
+    id: number,
+    fullName: String,
+    link: String,
+    firstName: String,
+    lastName: String,
+    primaryNumber: String,
+    birthDate: String,
+    currentAge: number,
+    birthCity: String,
+    birthStateProvince: String,
+    birthCountry: String,
+    nationality: String,
+    height: String,
+    weight: number,
+    active: boolean,
+    alternateCaptain: boolean,
+    captain: boolean,
+    rookie: boolean,
+    shootsCatches: String,
+    rosterStatus: String,
+    currentTeam: teamInfo,
+    primaryPosition: position
+}
+
+export interface player{
+    id: number,
+    fullName: String,
+    link: String,
+    firstName: String,
+    lastName: String,
+    birthDate: String,
+    birthCity: String,
+    birthStateProvince: String,
+    birthCountry: String,
+    nationality: String,
+    height: String,
+    weight: number,
+    active: boolean,
+    rookie: boolean,
+    shootsCatches: String,
+    rosterStatus: String,
+    primaryPosition: position
+}
+
 
 //interface that will store stat information for a specific season
 export interface statsSingleSeason{
