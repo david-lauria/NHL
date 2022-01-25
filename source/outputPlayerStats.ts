@@ -137,7 +137,7 @@ export async function outputPlayerStats(playerID: string, season: string) {
         }
 
 
-        var team_output = fs.writeFile('./player_output.csv', output, 'utf8', function (error) {
+        var team_output = fs.writeFile('./output/player_output.csv', output, 'utf8', function (error) {
             if (error) throw error;
         });
         return "File Created in local directory"

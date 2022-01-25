@@ -1,4 +1,4 @@
-import { outputTeamStats } from './outputTeamStats.js';
+import { outputTeamStats } from './source/outputTeamStats.js';
 
 
 

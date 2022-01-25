@@ -98,7 +98,7 @@ export async function outputPlayerStats(playerID, season) {
             let text = idList[i] + ',' + playerName + ',' + currentTeam + ',' + playerAge + ',' + playerNumber + ',' + playerPosition + ',' + playerRookie + ',' + assists + ',' + goals + ',' + games + ',' + hits + ',' + points;
             output += '\n' + text;
         }
-        var team_output = fs.writeFile('./player_output.csv', output, 'utf8', function (error) {
+        var team_output = fs.writeFile('./output/player_output.csv', output, 'utf8', function (error) {
             if (error)
                 throw error;
         });
