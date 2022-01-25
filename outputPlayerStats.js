@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { callAPI } from './callAPI.js';
+import { checkSeason } from './checkSeason.js';
 //get the player's team
 function getTeam(p_player) {
     try {
@@ -39,6 +40,8 @@ export async function outputPlayerStats(playerID, season) {
     var output = 'PLAYER_ID,PLAYER_NAME,CURRENT_TEAM,PLAYER_AGE,PLAYER_NUM,PLAYER_POS,ROOKIE_SW,ASSISTS_NUM,GOALS_NUM,GAMES_NUM,HITS_NUM,POINTS_NUM';
     try {
         //get list of ID if a list is provided
+        // check season format and make sure it is valid.
+        checkSeason(season);
         var idList = playerID.split(',');
         var playerInfoResponse = null;
         var playerStatResponse = null;

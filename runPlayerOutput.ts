@@ -1,17 +1,17 @@
 import { outputPlayerStats } from './outputPlayerStats.js';
 
-try{
-var playerID = process.argv[2];
-var season = process.argv[3];
+try {
+    var playerID = process.argv[2];
+    var season = process.argv[3];
 
-if(playerID === undefined) throw "Player is not specifed";
-if(season === undefined) throw "Season is not specified";
+    if (playerID === undefined) throw "Player is not specifed";
+    if (season === undefined) throw "Season is not specified";
 
 
-var result = await outputPlayerStats(playerID,season);
+    var result = await outputPlayerStats(playerID, season);
 
-console.log(result);
+    console.log(result);
 }
-catch(error){
+catch (error) {
     console.log(error);
 }

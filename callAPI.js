@@ -5,5 +5,5 @@ export async function callAPI(p_url) {
     if (!response.ok) {
         throw Error(response.statusText);
     }
-    return response.json();
+    return await response.json();
 }

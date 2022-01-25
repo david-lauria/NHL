@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { callAPI } from './callAPI.js';
+import { checkSeason } from './checkSeason.js';
 //gets the single season stats vs regular season rankings stats that are returned by the API
 function getSingleSeasonStats(stats) {
     for (var i in stats) {
@@ -32,6 +33,8 @@ function getOpponent(game, p_team_id) {
 }
 export async function outputTeamStats(teamID, season) {
     try {
+        // check season format and make sure it is valid.
+        checkSeason(season);
         //store information in variables ready to be used for now
         var build_info_url = 'https://statsapi.web.nhl.com/api/v1/teams?teamId=' + teamID + '&expand=team.stats&season=' + season;
         var teamInfoResponse = null;
