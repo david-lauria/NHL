@@ -286,31 +286,6 @@
   "resolved" "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   "version" "0.2.3"
 
-"@fast-csv/format@4.3.5":
-  "integrity" "sha512-8iRn6QF3I8Ak78lNAa+Gdl5MJJBM5vRHivFtMRUWINdevNo00K7OXxS2PshawLKTejVwieIlPmK5YlLu6w4u8A=="
-  "resolved" "https://registry.npmjs.org/@fast-csv/format/-/format-4.3.5.tgz"
-  "version" "4.3.5"
-  dependencies:
-    "@types/node" "^14.0.1"
-    "lodash.escaperegexp" "^4.1.2"
-    "lodash.isboolean" "^3.0.3"
-    "lodash.isequal" "^4.5.0"
-    "lodash.isfunction" "^3.0.9"
-    "lodash.isnil" "^4.0.0"
-
-"@fast-csv/parse@4.3.6":
-  "integrity" "sha512-uRsLYksqpbDmWaSmzvJcuApSEe38+6NQZBUsuAyMZKqHxH0g1wcJgsKUvN3WC8tewaqFjBMMGrkHmC+T7k8LvA=="
-  "resolved" "https://registry.npmjs.org/@fast-csv/parse/-/parse-4.3.6.tgz"
-  "version" "4.3.6"
-  dependencies:
-    "@types/node" "^14.0.1"
-    "lodash.escaperegexp" "^4.1.2"
-    "lodash.groupby" "^4.6.0"
-    "lodash.isfunction" "^3.0.9"
-    "lodash.isnil" "^4.0.0"
-    "lodash.isundefined" "^3.0.1"
-    "lodash.uniq" "^4.5.0"
-
 "@istanbuljs/load-nyc-config@^1.0.0":
   "integrity" "sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ=="
   "resolved" "https://registry.npmjs.org/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz"
@@ -578,11 +553,6 @@
   "integrity" "sha512-S/3xB4KzyFxYGCppyDt68yzBU9ysL88lSdIah4D6cptdcltc4NCPCAMc0+PCpg/lLIyC7IPvj2Z52OJWeIUkog=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-17.0.10.tgz"
   "version" "17.0.10"
-
-"@types/node@^14.0.1":
-  "integrity" "sha512-j11XSuRuAlft6vLDEX4RvhqC0KxNxx6QIyMXNb0vHHSNPXTPeiy3algESWmOOIzEtiEL0qiowPU3ewW9hHVa7Q=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-14.18.9.tgz"
-  "version" "14.18.9"
 
 "@types/prettier@^2.1.5":
   "integrity" "sha512-QzSuZMBuG5u8HqYz01qtMdg/Jfctlnvj1z/lYnIDXs/golxw0fxtRAHd9KrzjR7Yxz1qVeI00o0kiO3PmVdJ9w=="
@@ -941,16 +911,6 @@
   dependencies:
     "cssom" "~0.3.6"
 
-"csv-stringify@^6.0.5":
-  "integrity" "sha512-7xpV3uweJCFF/Ssn56l3xsR/k2r3UqszwjEhej9qEn2cCPzyK1WyHCgoUVzBA792x8HbwonNX7CU9XM2K5s5yw=="
-  "resolved" "https://registry.npmjs.org/csv-stringify/-/csv-stringify-6.0.5.tgz"
-  "version" "6.0.5"
-
-"csv-writer@^1.6.0":
-  "integrity" "sha512-NOx7YDFWEsM/fTRAJjRpPp8t+MKRVvniAg9wQlUKx20MFrPs73WLJhFf5iteqrxNYnsy924K3Iroh3yNHeYd2g=="
-  "resolved" "https://registry.npmjs.org/csv-writer/-/csv-writer-1.6.0.tgz"
-  "version" "1.6.0"
-
 "data-uri-to-buffer@^4.0.0":
   "integrity" "sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA=="
   "resolved" "https://registry.npmjs.org/data-uri-to-buffer/-/data-uri-to-buffer-4.0.0.tgz"
@@ -1100,19 +1060,6 @@
     "jest-get-type" "^27.4.0"
     "jest-matcher-utils" "^27.4.6"
     "jest-message-util" "^27.4.6"
-
-"export-to-csv@^0.2.1":
-  "integrity" "sha512-KTbrd3CAZ0cFceJEZr1e5uiMasabeCpXq1/5uvVxDl53o4jXJHnltasQoj2NkzrxD8hU9kdwjnMhoir/7nNx/A=="
-  "resolved" "https://registry.npmjs.org/export-to-csv/-/export-to-csv-0.2.1.tgz"
-  "version" "0.2.1"
-
-"fast-csv@^4.3.6":
-  "integrity" "sha512-2RNSpuwwsJGP0frGsOmTb9oUF+VkFSM4SyLTDgwf2ciHWTarN0lQTC+F2f/t5J9QjW+c65VFIAAu85GsvMIusw=="
-  "resolved" "https://registry.npmjs.org/fast-csv/-/fast-csv-4.3.6.tgz"
-  "version" "4.3.6"
-  dependencies:
-    "@fast-csv/format" "4.3.5"
-    "@fast-csv/parse" "4.3.6"
 
 "fast-json-stable-stringify@^2.0.0":
   "integrity" "sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw=="
@@ -1876,46 +1823,6 @@
   "version" "5.0.0"
   dependencies:
     "p-locate" "^4.1.0"
-
-"lodash.escaperegexp@^4.1.2":
-  "integrity" "sha1-ZHYsSGGAglGKw99Mz11YhtriA0c="
-  "resolved" "https://registry.npmjs.org/lodash.escaperegexp/-/lodash.escaperegexp-4.1.2.tgz"
-  "version" "4.1.2"
-
-"lodash.groupby@^4.6.0":
-  "integrity" "sha1-Cwih3PaDl8OXhVwyOXg4Mt90A9E="
-  "resolved" "https://registry.npmjs.org/lodash.groupby/-/lodash.groupby-4.6.0.tgz"
-  "version" "4.6.0"
-
-"lodash.isboolean@^3.0.3":
-  "integrity" "sha1-bC4XHbKiV82WgC/UOwGyDV9YcPY="
-  "resolved" "https://registry.npmjs.org/lodash.isboolean/-/lodash.isboolean-3.0.3.tgz"
-  "version" "3.0.3"
-
-"lodash.isequal@^4.5.0":
-  "integrity" "sha1-QVxEePK8wwEgwizhDtMib30+GOA="
-  "resolved" "https://registry.npmjs.org/lodash.isequal/-/lodash.isequal-4.5.0.tgz"
-  "version" "4.5.0"
-
-"lodash.isfunction@^3.0.9":
-  "integrity" "sha512-AirXNj15uRIMMPihnkInB4i3NHeb4iBtNg9WRWuK2o31S+ePwwNmDPaTL3o7dTJ+VXNZim7rFs4rxN4YU1oUJw=="
-  "resolved" "https://registry.npmjs.org/lodash.isfunction/-/lodash.isfunction-3.0.9.tgz"
-  "version" "3.0.9"
-
-"lodash.isnil@^4.0.0":
-  "integrity" "sha1-SeKM1VkBNFjIFMVHnTxmOiG/qmw="
-  "resolved" "https://registry.npmjs.org/lodash.isnil/-/lodash.isnil-4.0.0.tgz"
-  "version" "4.0.0"
-
-"lodash.isundefined@^3.0.1":
-  "integrity" "sha1-I+89lTVWUgOmbO/VuDD4SJEa+0g="
-  "resolved" "https://registry.npmjs.org/lodash.isundefined/-/lodash.isundefined-3.0.1.tgz"
-  "version" "3.0.1"
-
-"lodash.uniq@^4.5.0":
-  "integrity" "sha1-0CJTc662Uq3BvILklFM5qEJ1R3M="
-  "resolved" "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
-  "version" "4.5.0"
 
 "lodash@^4.7.0":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="

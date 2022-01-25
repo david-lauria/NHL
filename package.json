@@ -1,9 +1,5 @@
 {
   "dependencies": {
-    "csv-stringify": "^6.0.5",
-    "csv-writer": "^1.6.0",
-    "export-to-csv": "^0.2.1",
-    "fast-csv": "^4.3.6",
     "node-fetch": "^3.2.0"
   },
   "devDependencies": {
