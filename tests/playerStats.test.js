@@ -1,7 +1,8 @@
-import { outputPlayerStats } from './source/outputPlayerStats.js';
+import { outputPlayerStats } from '../source/outputPlayerStats.js';
 
 
-
+//unit tests that test regular functionality and some edge test cases. 
+//I would like to change this test to allow it to check the contents and be sure it is writing out correctly
 
 
 await test('Test one player information API pull', async () => {

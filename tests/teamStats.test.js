@@ -1,8 +1,7 @@
-import { outputTeamStats } from './source/outputTeamStats.js';
+import { outputTeamStats } from '../source/outputTeamStats.js';
 
-
-
-
+//unit tests that test regular functionality and some edge test cases. 
+//I would like to change this test to allow it to check the contents and be sure it is writing out correctly
 
 await test('Test one team information API pull', async () => {
   expect(await outputTeamStats("5", "20152016")).toBe("File Created in local directory");
