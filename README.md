@@ -23,9 +23,9 @@ Install typescript globally `npm install -g typescript`
 
 Compile code in command line: `tsc`
 
-Call player code in command line: `node runPlayerOutput.js 8471214 20152016`
+Call player code in command line: `node source/runPlayerOutput.js 8471214 20152016`
 
-Call team code in command line: `node runTeamOutput.js 5 20152016`
+Call team code in command line: `node source/runTeamOutput.js 5 20152016`
 
 CSV file will be created output directory
 
