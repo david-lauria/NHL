@@ -4,10 +4,15 @@
  This project is done using Typescript. Included is how to install typescript if not installed and how to setup the dependencies if they are not working from the files I provided. 
  
 ### Install TypeScript
+
+In the the project directory
+
 Install nvm  `https://github.com/coreybutler/nvm-windows`
 
 In command line:
 Install latest version of node and npm `nvm install latest`
+
+While running command line as administrator run
 
 `nvm use 17.4.0`
 
@@ -15,7 +20,6 @@ Install typescript globally `npm install -g typescript`
 
 
 ### Running code
-Navigate to directory that the project is in.
 
 Compile code in command line: `tsc`
 
@@ -27,9 +31,12 @@ CSV file will be created output directory
 
 
 ### Running test suite
-From the NHL directory, run the following command to run two test suites. One for player and one for team outputs.
+From the root directory, run the following command to run two test suites. One for player and one for team outputs. 
 
 `node --experimental-vm-modules node_modules/jest/bin/jest.js`
+
+I had to use an experimental version of the jest since my program used an ECMA script.
+
 
 
 
